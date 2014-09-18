@@ -11,6 +11,8 @@ repositories {
     mavenCentral()
 }
 
+apply plugin: 'maven'
+apply plugin: 'signing'
 apply plugin: 'android-library'
 
 android {
@@ -36,4 +38,31 @@ dependencies {
     compile 'com.android.support:appcompat-v7:20.+'
     compile 'com.commonsware.cwac:mediarouter:0.1.+'
     compile 'com.google.android.gms:play-services:5.0.+'
+}
+
+version = android.defaultConfig.versionName
+group = 'com.smartnsoft'
+
+uploadArchives
+{
+  repositories
+  {
+    mavenDeployer
+    {
+      repository(url: nexusReleaseUrl)
+      {
+        authentication(userName: nexusUsername, password: nexusPassword)
+      }
+      snapshotRepository(url: nexusSnapshotUrl)
+      {
+        authentication(userName: nexusUsername, password: nexusPassword)
+      }
+      pom.project
+      {
+        artifactId 'castcompanion'
+        name 'CastCompanionLibrary'
+        packaging 'aar'
+      }
+    }
+  }
 }
