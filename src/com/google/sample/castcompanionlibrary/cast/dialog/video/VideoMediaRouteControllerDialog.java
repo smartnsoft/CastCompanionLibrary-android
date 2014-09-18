@@ -18,6 +18,7 @@ package com.google.sample.castcompanionlibrary.cast.dialog.video;
 
 import static com.google.sample.castcompanionlibrary.utils.LogUtils.LOGE;
 
+import android.support.v7.app.MediaRouteControllerDialog;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.cast.MediaMetadata;
 import com.google.android.gms.cast.MediaStatus;
@@ -36,7 +37,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.MediaRouteControllerDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -47,7 +47,8 @@ import android.widget.TextView;
  * A custom {@link MediaRouteControllerDialog} that provides an album art, a play/pause button and
  * the ability to take user to the target activity when the album art is tapped.
  */
-public class VideoMediaRouteControllerDialog extends MediaRouteControllerDialog {
+public class VideoMediaRouteControllerDialog extends MediaRouteControllerDialog
+{
 
     private static final String TAG =
             LogUtils.makeLogTag(VideoMediaRouteControllerDialog.class);
