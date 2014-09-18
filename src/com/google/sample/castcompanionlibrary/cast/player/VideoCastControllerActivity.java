@@ -19,6 +19,8 @@ package com.google.sample.castcompanionlibrary.cast.player;
 import static com.google.sample.castcompanionlibrary.utils.LogUtils.LOGD;
 import static com.google.sample.castcompanionlibrary.utils.LogUtils.LOGE;
 
+import android.app.ActionBar;
+import android.support.v4.app.FragmentActivity;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.cast.MediaStatus;
 import com.google.sample.castcompanionlibrary.R;
@@ -35,8 +37,6 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -63,7 +63,7 @@ import android.widget.TextView;
  * In that case, this activity manages starting the {@link IMediaAuthService} and will register a
  * listener to handle the result.
  */
-public class VideoCastControllerActivity extends ActionBarActivity implements IVideoCastController {
+public class VideoCastControllerActivity extends FragmentActivity implements IVideoCastController {
 
     private static final String TAG = LogUtils.makeLogTag(VideoCastControllerActivity.class);
     private VideoCastManager mCastManager;
@@ -257,7 +257,7 @@ public class VideoCastControllerActivity extends ActionBarActivity implements IV
     }
 
     private void setupActionBar() {
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setDisplayUseLogoEnabled(false);
         actionBar.setDisplayShowHomeEnabled(false);
