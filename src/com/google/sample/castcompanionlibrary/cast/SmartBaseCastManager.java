@@ -91,7 +91,7 @@ public abstract class SmartBaseCastManager
 
   protected MediaRouteSelector mMediaRouteSelector;
 
-  protected CastMediaRouterCallback mMediaRouterCallback;
+  protected SmartCastMediaRouterCallback mMediaRouterCallback;
 
   protected CastDevice mSelectedCastDevice;
 
@@ -198,7 +198,7 @@ public abstract class SmartBaseCastManager
     mMediaRouter = MediaRouter.getInstance(context);
     mMediaRouteSelector = new MediaRouteSelector.Builder().addControlCategory(CastMediaControlIntent.categoryForCast(mApplicationId)).build();
 
-    mMediaRouterCallback = new CastMediaRouterCallback(this, context);
+    mMediaRouterCallback = new SmartCastMediaRouterCallback(this, context);
     mMediaRouter.addCallback(mMediaRouteSelector, mMediaRouterCallback, MediaRouter.CALLBACK_FLAG_REQUEST_DISCOVERY);
   }
 

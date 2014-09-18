@@ -21,8 +21,9 @@ android {
     publishNonDefault true
 
     defaultConfig {
-        minSdkVersion 10
+        minSdkVersion 14
         targetSdkVersion 19
+        versionName "1.10.3"
     }
 
     sourceSets {
