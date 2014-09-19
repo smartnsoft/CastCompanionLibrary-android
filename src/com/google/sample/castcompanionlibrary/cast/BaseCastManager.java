@@ -19,6 +19,9 @@ package com.google.sample.castcompanionlibrary.cast;
 import static com.google.sample.castcompanionlibrary.utils.LogUtils.LOGD;
 import static com.google.sample.castcompanionlibrary.utils.LogUtils.LOGE;
 
+import com.commonsware.cwac.mediarouter.MediaRouteActionProvider;
+import com.commonsware.cwac.mediarouter.MediaRouteButton;
+import com.commonsware.cwac.mediarouter.MediaRouteDialogFactory;
 import com.google.android.gms.cast.ApplicationMetadata;
 import com.google.android.gms.cast.Cast;
 import com.google.android.gms.cast.Cast.ApplicationConnectionResult;
@@ -54,9 +57,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.MediaRouteActionProvider;
-import android.support.v7.app.MediaRouteButton;
-import android.support.v7.app.MediaRouteDialogFactory;
 import android.support.v7.media.MediaRouteSelector;
 import android.support.v7.media.MediaRouter;
 import android.support.v7.media.MediaRouter.RouteInfo;
@@ -352,7 +352,7 @@ public abstract class BaseCastManager implements DeviceSelectionListener, Connec
     public MenuItem addMediaRouterButton(Menu menu, int menuResourceId) {
         MenuItem mediaRouteMenuItem = menu.findItem(menuResourceId);
         MediaRouteActionProvider mediaRouteActionProvider = (MediaRouteActionProvider)
-                MenuItemCompat.getActionProvider(mediaRouteMenuItem);
+            mediaRouteMenuItem.getActionProvider();
         mediaRouteActionProvider.setRouteSelector(mMediaRouteSelector);
         if (null != getMediaRouteDialogFactory()) {
             mediaRouteActionProvider.setDialogFactory(getMediaRouteDialogFactory());
