@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Cast Companion Library</string>
+    <string name="ccl_version">1.10</string>
+    <string name="media_route_menu_title">Diffusion sur&#8230;</string>
+    <string name="live">Direct</string>
+    <string name="cancel">Annuler</string>
+    <string name="on">On</string>
+    <string name="off">Off</string>
+    <string name="info_na">Information non disponible</string>
+
+    <!-- Used in Error Dialog -->
+    <string name="ok">OK</string>
+
+    <!-- Title of the Error Dialog -->
+    <string name="error">Erreur</string>
+
+    <!-- Shown in VideoCastController Activity -->
+    <string name="casting_to_device">Diffusion sur %1$s</string>
+    <string name="loading">Chargement&#8230;</string>
+
+    <!-- Used in Router Controller Dialog -->
+    <string name="no_media_info">Aucune information disponible</string>
+
+    <!-- Session Recovery Dialog message -->
+    <string name="session_reconnection_attempt">Tentative de restauration de la session précédente&#8230;</string>
+
+    <!-- onApplicationConnectionFailed() errors -->
+    <string name="failed_to_launch_app">Impossible de lancer l\'application</string>
+    <string name="failed_app_launch_timeout">Le lancement de l\'application prend trop de temps !</string>
+    <string name="failed_to_find_app">L\'application que vous tentez de lancer n\'est pas disponible sur votre Chromecast</string>
+
+    <!-- Error messages for the play.pause in mini player -->
+    <string name="failed_to_play">Impossible de lancer la lecture du média</string>
+    <string name="failed_to_stop">Impossible d\'arrêter la lecture du média</string>
+    <string name="failed_to_pause">Impossible de mettre en pause le média</string>
+    <string name="failed_unknown">Une erreur inconnue est survenue</string>
+
+    <!-- Failures -->
+    <string name="failed_to_connect">Impossible de se connecter au terminal</string>
+    <string name="failed_setting_volume">Impossible de changer le volume</string>
+    <string name="failed_no_connection">Aucune connexion à la Chromecast n\'a été trouvée</string>
+    <string name="failed_no_connection_short">Pas de connexion</string>
+    <string name="failed_no_connection_trans">La connexion à la Chromecast a été perdue. Nous allons tenter de vous reconnecter. Merci de patienter quelques secondes et recommencer.</string>
+    <string name="failed_perform_action">Cette action a échouée</string>
+    <string name="failed_status_request">La synchronisation avec la Chromecast a échouée</string>
+    <string name="failed_load">Impossible de charger le média sur la Chromecast</string>
+    <string name="failed_seek">Impossible de changer la position du média sur la Chromecast</string>
+    <string name="failed_receiver_player_error">Le lecteur vidéo a rencontré une erreur serveur</string>
+    <string name="failed_authorization_timeout">L\'autorisation prend trop de temps !</string>
+    <string name="failed_to_set_track_style">Impossible de changer les sous-titres</string>
+
+</resources>
