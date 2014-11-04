@@ -350,12 +350,12 @@ public class VideoMediaRouteControllerDialog
       }
       catch (TransientNetworkDisconnectionException e)
       {
-        adjustControlsVisibility(true);
+        adjustControlsVisibility(false, false);
         LOGE(TAG, "Failed to toggle mute due to network issues", e);
       }
       catch (NoConnectionException e)
       {
-        adjustControlsVisibility(true);
+        adjustControlsVisibility(false, false);
         LOGE(TAG, "Failed to toggle mute due to network issues", e);
       }
     }
@@ -369,11 +369,11 @@ public class VideoMediaRouteControllerDialog
       {
       case MediaStatus.PLAYER_STATE_PLAYING:
         mPausePlay.setImageDrawable(getPauseStopButton());
-        adjustControlsVisibility(true);
+        adjustControlsVisibility(true, false);
         break;
       case MediaStatus.PLAYER_STATE_PAUSED:
         mPausePlay.setImageDrawable(mPlayDrawable);
-        adjustControlsVisibility(true);
+        adjustControlsVisibility(true, false);
         restartTrickplayTimer();
         break;
       case MediaStatus.PLAYER_STATE_IDLE:
@@ -397,7 +397,7 @@ public class VideoMediaRouteControllerDialog
             if (idleReason == MediaStatus.IDLE_REASON_CANCELED)
             {
               mPausePlay.setImageDrawable(mPlayDrawable);
-              adjustControlsVisibility(true);
+              adjustControlsVisibility(true, false);
             }
             else
             {
@@ -410,7 +410,7 @@ public class VideoMediaRouteControllerDialog
         restartTrickplayTimer();
         break;
       case MediaStatus.PLAYER_STATE_BUFFERING:
-        adjustControlsVisibility(false);
+        adjustControlsVisibility(false, true);
         break;
       default:
         mPausePlay.setVisibility(View.INVISIBLE);
@@ -437,13 +437,13 @@ public class VideoMediaRouteControllerDialog
     mLoading.setVisibility(show ? View.VISIBLE : View.GONE);
   }
 
-  private void adjustControlsVisibility(boolean showPlayPause)
+  private void adjustControlsVisibility(boolean showPlayPause, boolean showLoading)
   {
-    int visible = showPlayPause ? View.VISIBLE : View.INVISIBLE;
-    mPausePlay.setVisibility(visible);
-    muteSoundView.setVisibility(visible);
-    buttonsContainer.setVisibility(visible);
-    setLoadingVisibility(!showPlayPause);
+    final int playPauseVisibility = showPlayPause ? View.VISIBLE : View.INVISIBLE;
+    mPausePlay.setVisibility(playPauseVisibility);
+    muteSoundView.setVisibility(playPauseVisibility);
+    buttonsContainer.setVisibility(playPauseVisibility);
+    setLoadingVisibility(showLoading);
   }
 
   @Override
@@ -495,22 +495,22 @@ public class VideoMediaRouteControllerDialog
         }
         try
         {
-          adjustControlsVisibility(false);
+          adjustControlsVisibility(false, true);
           mCastManager.togglePlayback();
         }
         catch (CastException e)
         {
-          adjustControlsVisibility(true);
+          adjustControlsVisibility(false, false);
           LOGE(TAG, "Failed to toggle playback", e);
         }
         catch (TransientNetworkDisconnectionException e)
         {
-          adjustControlsVisibility(true);
+          adjustControlsVisibility(false, false);
           LOGE(TAG, "Failed to toggle playback due to network issues", e);
         }
         catch (NoConnectionException e)
         {
-          adjustControlsVisibility(true);
+          adjustControlsVisibility(false, false);
           LOGE(TAG, "Failed to toggle playback due to network issues", e);
         }
       }

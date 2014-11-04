@@ -27,15 +27,19 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingTop="5dip"
+    android:paddingBottom="5dip"
+    android:gravity="center"
     android:layout_below="@id/iconContainer"
-  >
+    android:visibility="gone"
+    >
     <ImageView
       android:id="@+id/muteSoundView"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:src="@drawable/sound"
       android:layout_marginRight="10dip"
-    />
+      />
 
     <ImageView
       android:id="@+id/playPauseView"
@@ -43,7 +47,18 @@
       android:layout_height="wrap_content"
       android:src="@drawable/pause"
       android:layout_marginLeft="10dip"
-    />
+      />
+
+    <ImageButton
+      android:id="@+id/cc"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true"
+      android:layout_centerInParent="true"
+      android:visibility="gone"
+      android:background="@null"
+      android:src="@drawable/subtitles"
+      />
   </LinearLayout>
 
   <RelativeLayout
@@ -51,7 +66,7 @@
     android:layout_width="fill_parent"
     android:layout_height="45dp"
     android:layout_below="@id/buttonsContainer"
-  >
+    >
 
     <TextView
       android:id="@+id/startText"
@@ -73,7 +88,6 @@
       android:layout_height="fill_parent"
       android:layout_marginRight="12dp"
       android:layout_marginLeft="12dp"
-      android:layout_toLeftOf="@+id/cc"
       android:gravity="center_vertical"
       android:layout_alignWithParentIfMissing="true"
       android:maxLines="1"
@@ -101,10 +115,6 @@
     android:id="@+id/loadingView"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_alignBottom="@+id/playPauseView"
-    android:layout_alignLeft="@+id/playPauseView"
-    android:layout_alignRight="@+id/playPauseView"
-    android:layout_alignTop="@+id/playPauseView"
     android:layout_centerVertical="true"
     android:visibility="gone"/>
 
@@ -115,7 +125,6 @@
     android:layout_centerVertical="true"
     android:layout_marginLeft="5dp"
     android:layout_marginRight="10dp"
-    android:layout_toLeftOf="@+id/playPauseView"
     android:layout_toRightOf="@+id/iconContainer"
     android:orientation="vertical">
 
