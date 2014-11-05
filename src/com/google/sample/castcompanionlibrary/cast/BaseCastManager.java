@@ -162,7 +162,7 @@ public abstract class BaseCastManager implements DeviceSelectionListener, Connec
      *
      * @return
      */
-    abstract MediaRouteDialogFactory getMediaRouteDialogFactory();
+    public abstract MediaRouteDialogFactory getMediaRouteDialogFactory();
 
     /**
      * Subclasses should implement this to react appropriately to the successful launch of their

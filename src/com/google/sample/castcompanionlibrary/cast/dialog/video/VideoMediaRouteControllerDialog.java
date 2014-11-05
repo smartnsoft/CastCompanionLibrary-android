@@ -19,10 +19,12 @@ package com.google.sample.castcompanionlibrary.cast.dialog.video;
 import static com.google.sample.castcompanionlibrary.utils.LogUtils.LOGE;
 
 import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar.OnSeekBarChangeListener;
 import com.google.sample.castcompanionlibrary.utils.Utils;
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -211,11 +213,6 @@ public class VideoMediaRouteControllerDialog
           updatePlayPauseState(mState);
         }
 
-        /*
-         * (non-Javadoc)
-         * 
-         * @see com.google.sample.castcompanionlibrary.cast.VideoCastConsumerImpl #onMediaChannelMetadataUpdated()
-         */
         @Override
         public void onRemoteMediaPlayerMetadataUpdated()
         {
@@ -223,6 +220,7 @@ public class VideoMediaRouteControllerDialog
         }
 
       };
+
       mCastManager.addVideoCastConsumer(castConsumerImpl);
       mPauseDrawable = context.getResources().getDrawable(R.drawable.pause);
       mPlayDrawable = context.getResources().getDrawable(R.drawable.play);

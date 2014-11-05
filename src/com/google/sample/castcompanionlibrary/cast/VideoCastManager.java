@@ -240,8 +240,7 @@ public class VideoCastManager extends BaseCastManager
         return sInstance;
     }
 
-    private VideoCastManager(Context context, String applicationId, Class<?> targetActivity,
-            String dataNamespace) {
+    protected VideoCastManager(Context context, String applicationId, Class<?> targetActivity, String dataNamespace) {
         super(context, applicationId);
         LOGD(TAG, "VideoCastManager is instantiated");
         mDataNamespace = dataNamespace;
@@ -2000,10 +1999,10 @@ public class VideoCastManager extends BaseCastManager
         mState = MediaStatus.PLAYER_STATE_IDLE;
     }
 
-    @Override
-    MediaRouteDialogFactory getMediaRouteDialogFactory() {
-        return new VideoMediaRouteDialogFactory();
-    }
+  @Override
+  public MediaRouteDialogFactory getMediaRouteDialogFactory() {
+    return new VideoMediaRouteDialogFactory();
+  }
 
     class CastListener extends Cast.Listener {
 
