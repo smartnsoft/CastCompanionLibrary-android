@@ -296,13 +296,13 @@ public class DataCastManager
   /*************************************************************************/
 
   @Override
-  protected void onDeviceUnselected()
+  public void onDeviceUnselected()
   {
     detachDataChannels();
   }
 
   @Override
-  protected Builder getCastOptionBuilder(CastDevice device)
+  public Builder getCastOptionBuilder(CastDevice device)
   {
 
     Builder builder = Cast.CastOptions.builder(mSelectedCastDevice, new CastListener());
