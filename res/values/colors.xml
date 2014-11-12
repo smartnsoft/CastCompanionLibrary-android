@@ -13,6 +13,12 @@
     <!-- Custom Media Router Dialog -->
     <color name="mr_custom_line_1">#FFFFFF</color>
     <color name="mr_custom_line_2">#AAFFFFFF</color>
-    <color name="mr_custom_title">#33b5e5</color>
+    <color name="mr_custom_title">#FFF</color>
+    <color name="castDialogBackground">#232323</color>
+
+    <color name="prehome_state_default">@android:color/transparent</color>
+    <color name="prehome_state_pressed">#883baefc</color>
+    <color name="prehome_state_focused">@color/prehome_state_pressed</color>
+    <color name="prehome_state_selected">#88e7e7e7</color>
 
 </resources>
