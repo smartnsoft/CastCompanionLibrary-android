@@ -3,7 +3,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:0.14.+'
     }
 }
 
@@ -16,13 +16,13 @@ apply plugin: 'signing'
 apply plugin: 'android-library'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1.0"
+  compileSdkVersion 21
+  buildToolsVersion '21.1.0'
     publishNonDefault true
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 19
+      minSdkVersion 14
+      targetSdkVersion 21
         versionName "1.10.6"
     }
 
