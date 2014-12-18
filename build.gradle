@@ -39,7 +39,7 @@ dependencies {
   // Android
   compile 'com.android.support:appcompat-v7:21.0.+'
   compile 'com.android.support:mediarouter-v7:21.+'
-  compile 'com.google.android.gms:play-services:6.1.+'
+  compile 'com.google.android.gms:play-services-cast:6.5.+'
 }
 
 version = android.defaultConfig.versionName
